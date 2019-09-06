@@ -1,0 +1,73 @@
+/*
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: CSS for Funds Request page of mahavitaran
+ */
+
+
+body {
+  background-color: #7bd3fc;
+}
+
+td {
+  width: 240px;
+}
+
+table {
+  width: 800px !important;
+}
+
+.row {
+  margin-top: 60px;
+}
+
+.input-group-text {
+  width: 160px;
+}
+
+.navbar {
+  padding-left: 10%;
+}
+
+#nav-logo {
+  width: 50%;
+}
+
+.navbar-nav {
+  margin-left: 20%;
+}
+
+.nav-head {
+  font-size: 38px;
+  color: white !important;
+  /* transition-timing-function: ease-in; */
+  margin-right: 180px;
+}
+
+#nav-head-desc {
+  margin-left: 100px;
+}
+
+.nav-link {
+  margin-top: 5px;
+  font-size: 24px;
+  color: white !important;
+  transition-timing-function: ease-in;
+}
+
+.nav-link:hover {
+  font-weight: 400;
+  transition-timing-function: ease-in;
+}
+
+.main {
+  margin-top: 5%;
+}
+
+#goBack {
+  margin-right: 30px;
+}
+
+
+/*  */

@@ -1,0 +1,283 @@
+
+<!--
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: HTML for Fund Request page of mahavitaran
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mahavitaran Home</title>
+    <link rel="icon" href="../resources/img/logo/logo.ico">
+
+    <!-- ========================== CSS LIBRARIES IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/libs/tabulator_bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- ========================== CUSTOM CSS IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/fundRequest.css">
+    <link rel="stylesheet" href="../css/util.css">
+
+
+    <!-- ========================== JS LIBRARIES IMPORTS ============================= -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/libs/popper.min.js" charset="utf-8"></script>
+    <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
+    <script src="../js/libs/tabulator.min.js" charset="utf-8"></script>
+    <script src="../js/libs/xlsx.full.min.js" charset="utf-8"></script>
+    <script src="../js/libs/jszip.js" charset="utf-8"></script>
+
+    <!-- ========================== UTILITY FUNCTIONS IMPORT ============================= -->
+    <script src="../js/util.js" charset="utf-8"></script>
+
+    <!-- ========================== CONTROLLER FUNCTIONS IMPORTS ============================= -->
+    <!-- <script src="../controller/authenticate/.js" charset="utf-8"></script> -->
+
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-bottom shadow sticky-top">
+      <a class="navbar-brand" href="#">
+        <img id="nav-logo" src="../resources/img/logo/logo_symbol.png" class="d-inline-block align-top rounded shadow-lg" alt="Mahavitaran Logo">
+        <!-- Bootstrap -->
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item nav-heading">
+            <span class="nav-head display-1">FUND REQUEST</span>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link display-1 btn btn-dark" id="goBack">
+              Go Back
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link display-1 btn btn-dark" id="logout">
+              Log out
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main container" >
+
+
+
+      <div class="container-fluid bg-light rounded" style="padding: 10px;">
+        <h2>List of Payment Requests</h2>
+        <hr>
+        <div class="table-div container-fluid">
+          <table class="table table-light table-striped table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Beneficiary Name</th>
+                <!-- <th scope="col">Beneficiary ID</th> -->
+                <th scope="col">Payment Description</th>
+                <th scope="col">Account Number</th>
+                <th scope="col">IFSC Code</th>
+                <th scope="col">SAP Document Number</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- DATA WILL BE APPENDED HERE -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="container-fluid bg-light rounded" style="padding: 10px; margin-top: 5%; margin-bottom: 10%;">
+        <h2>Add New Payment Request</h2>
+        <hr>
+        <table class="table table-light table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Beneficiary Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Message</th>
+              <th scope="col">SAP Document No.</th>
+              <th scope="col">Priority</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Tranfer Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">
+                <input type="text" id="uid" list="bens" class="form-control" placeholder="Enter Beneficiary Name">
+                <datalist id="bens">
+                  <!-- DATA WILL BE APPENDED HERE -->
+                </datalist>
+              </th>
+              <th scope="col">
+                <input type="text" id="desc" class="form-control" placeholder="Enter Payment Description">
+              </th>
+              <th scope="col">
+                <input type="text" id="msg" class="form-control" placeholder="Enter Message">
+              </th>
+              <th scope="col">
+                <input type="text" id="sap" class="form-control" placeholder="Enter SAP Document Number">
+              </th>
+              <th scope="col">
+                <input type="number" id="prior" class="form-control" placeholder="Enter Priority">
+              </th>
+              <th scope="col">
+                <input type="number" id="amount" class="form-control" placeholder="Enter Amount">
+              </th>
+              <th scope="col">
+                <input type="text" id="type" class="form-control" placeholder="Enter Transfer Type">
+              </th>
+              <th scope="col">
+                <button class="btn <btn-primary></btn-primary> btn" id="submit" type="button">Submit</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+      <!-- <table class="table table-borderless table-light shadow">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Cheque</th>
+            <th scope="col">RTGS</th> -->
+            <!-- <th scope="col">Card</th> -->
+          <!-- </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td id="chequeVal">---</td>
+            <td id="rtgsVal">---</td> -->
+            <!-- <td id="cardVal">---</td> -->
+          <!-- </tr>
+        </tbody>
+      </table> -->
+
+
+      <!-- <div class="row">
+
+        <div class="col-md-6">
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input excel-input" id="chequeFile">
+              <label class="custom-file-label" for="chequeFile">Choose File</label>
+            </div>
+            <div class="input-group-append">
+              <button class="btn btn-warning" type="button" id="viewBtnCheque" disabled data-toggle="modal" data-target="#chequeModal">View and Send</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input excel-input" id="rtgsFile">
+              <label class="custom-file-label" for="rtgsFile">Choose File</label>
+            </div>
+            <div class="input-group-append">
+              <button class="btn btn-warning" type="button" id="viewBtnRtgs" disabled data-toggle="modal" data-target="#rtgsModal">View and Send</button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="col-md-4">
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="cardFile">
+              <label class="custom-file-label" for="cardFile">Choose file</label>
+            </div>
+          </div>
+        </div> -->
+
+
+
+      <!-- </div> -->
+
+    </div>
+
+
+    <!-- Cheque Modal -->
+    <!-- <div class="modal fade" id="chequeModal" tabindex="-1" role="dialog" aria-labelledby="chequeTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="chequeTitle">Cheque Request Breakdown</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"> -->
+            <!-- ========================== TABULATOR CHEQUE DISPLAY DIV =========================== -->
+            <!-- <div id="chequeTable"></div> -->
+            <!-- =================================================================================== -->
+          <!-- </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="sendCheque" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- RTGS Modal -->
+    <!-- <div class="modal fade" id="rtgsModal" tabindex="-1" role="dialog" aria-labelledby="rtgsTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rtgsTitle">RTGS Request Breakdown</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"> -->
+            <!-- ========================== TABULATOR RTGS DISPLAY DIV =========================== -->
+            <!-- <div id="rtgsTable"></div> -->
+            <!-- =================================================================================== -->
+          <!-- </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="sendRtgs" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="container" align="center">
+              <div id="loading"></div>
+              <h3></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+
+  <!-- ========================== CUSTOM JS IMPORTS ============================= -->
+  <script src="../js/fundRequest.js" charset="utf-8"></script>
+
+</html>

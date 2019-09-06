@@ -1,0 +1,47 @@
+/*
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: CSS for Register page of mahavitaran
+ */
+
+
+ body {
+   background-color: #7bd3fc;
+ }
+
+
+.btn-primary {
+  margin-top: 6%;
+}
+
+
+.nav-head {
+  margin-left: 45% !important;
+}
+
+
+.nav-head:hover {
+  color: rgb(0, 150, 240)
+}
+
+
+.main {
+  margin-top: 5%;
+  width: 55%;
+  padding: 2% 5% 2% 5%;
+}
+
+
+.display-3 {
+  font-size: 46px !important;
+}
+
+
+
+
+
+
+
+
+/*  */

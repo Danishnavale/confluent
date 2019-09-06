@@ -1,0 +1,115 @@
+
+<!--
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: HTML for Register page of mahavitaran
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mahavitaran Home</title>
+    <link rel="icon" href="../resources/img/logo/logo.ico">
+
+    <!-- ========================== CSS LIBRARIES IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+
+
+    <!-- ========================== CUSTOM CSS IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/register.css">
+
+
+    <!-- ========================== JS LIBRARIES IMPORTS ============================= -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/libs/popper.min.js" charset="utf-8"></script>
+    <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
+
+
+    <!-- ========================== UTILITY FUNCTIONS IMPORT ============================= -->
+    <script src="../js/util.js" charset="utf-8"></script>
+
+    <!-- ========================== CONTROLLER FUNCTIONS IMPORTS ============================= -->
+    <script src="../controller/register/register.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning rounded-bottom shadow sticky-top">
+      <div class="container">
+        <h5 id="goLogin" class="nav-head">Go to Login</h5>
+      </div>
+    </nav>
+
+    <div class="main container jumbotron">
+      <div class="container" align="center">
+        <h3 class="display-3">Register</h3>
+      </div>
+      <hr>
+      <br>
+      <div class="container">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" class="form-control" id="fname" placeholder="Enter your first name">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" class="form-control" id="lname" placeholder="Enter your last name">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter your username" aria-describedby="usernameHelp">
+          <small id="usernameHelp" class="form-text text-muted">Click anywhere else to check if username is available.</small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">Click anywhere else to check if email is available.</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter Password">
+          <small class="text text-danger d-none" id="passwordHelp">
+            Password should be between 10-20 characters and should contain atleast one uppercase letter,
+            one lowercase letter, one numeric digit, and one special character.
+          </small>
+        </div>
+
+        <div class="dropdown" style="margin-top: 4%;">
+          <button class="btn btn-light dropdown-toggle" type="button" id="level" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Level
+          </button>
+          <div class="dropdown-menu" aria-labelledby="level">
+            <a class="dropdown-item">ROLE_L1</a>
+            <a class="dropdown-item">ROLE_L2</a>
+            <a class="dropdown-item">ROLE_L3</a>
+			<a class="dropdown-item">ROLE_ADMIN</a>
+          </div>
+        </div>
+
+        <div class="dropdown" style="  margin-top: 4%;">
+          <button class="btn btn-light dropdown-toggle" type="button" id="branch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Branch
+          </button>
+          <div class="dropdown-menu" aria-labelledby="branch">
+            <a class="dropdown-item">Ganeshkhind Urban Circle</a>
+			<a class="dropdown-item">Bandra Civil Division</a>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="submit" disabled>Submit</button>
+      </div>
+
+    </div>
+
+
+
+  </body>
+
+  <!-- ========================== CUSTOM JS IMPORTS ============================= -->
+  <script src="../js/register.js" charset="utf-8"></script>
+
+</html>

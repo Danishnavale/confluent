@@ -1,0 +1,87 @@
+/*
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: CSS for home page of mahavitaran
+ */
+
+body {
+  background-color: #7bd3fc;
+}
+
+.navbar {
+  padding-left: 10%;
+}
+
+#nav-logo {
+  width: 50%;
+}
+
+.navbar-nav {
+  margin-left: 31%;
+}
+
+.nav-head {
+  font-size: 44px;
+  color: white !important;
+  /* transition-timing-function: ease-in; */
+  margin-right: 400px;
+}
+
+.nav-link {
+  margin-top: 5px;
+  font-size: 24px;
+  color: white !important;
+  transition-timing-function: ease-in;
+}
+
+.nav-link:hover {
+  font-weight: 400;
+  transition-timing-function: ease-in;
+}
+
+
+.main {
+  margin-top: 5%;
+}
+
+.row {
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 8%;
+}
+
+.main-buttons {
+  width: 300px;
+  height: 140px;
+  background-color: #d6d6d6;
+  transition-timing-function: ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  float: left;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-buttons:hover {
+  background-color: #f2f2f2;
+  transition-timing-function: ease-in-out;
+  box-shadow: .5rem 1rem 2rem rgba(0, 0, 0, .3)!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

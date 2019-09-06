@@ -1,0 +1,125 @@
+
+<!--
+Author: Vedant Nandoskar
+Github: https://www.github.com/Vedant1202
+Email: vedant.nandoskar@gmail.com
+Description: HTML for Home page of mahavitaran
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mahavitaran Home</title>
+    <link rel="icon" href="../resources/img/logo/logo.ico">
+
+
+    <!-- ========================== CSS LIBRARIES IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- ========================== CUSTOM CSS IMPORTS ============================= -->
+    <link rel="stylesheet" href="../css/chequePrint.css">
+
+
+    <!-- ========================== JS LIBRARIES IMPORTS ============================= -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+    <script src="../js/libs/popper.min.js" charset="utf-8"></script>
+    <script src="../js/libs/bootstrap.min.js" charset="utf-8"></script>
+    <script src="../js/libs/jspdf.debug.js" charset="utf-8"></script>
+
+    <!-- ========================== UTILITY FUNCTIONS IMPORT ============================= -->
+    <script src="../js/util.js" charset="utf-8"></script>
+
+    <!-- ========================== CONTROLLER FUNCTIONS IMPORTS ============================= -->
+    <!-- <script src="../controller/authenticate/.js" charset="utf-8"></script> -->
+
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded-bottom shadow sticky-top">
+      <a class="navbar-brand" href="#">
+        <img id="nav-logo" src="../resources/img/logo/logo_symbol.png" class="d-inline-block align-top rounded shadow-lg" alt="Mahavitaran Logo">
+        <!-- Bootstrap -->
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item nav-heading">
+            <span class="nav-head display-1">WELCOME USER</span>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link display-1 btn btn-dark" id="goBack">
+              Go Back
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link display-1 btn btn-dark" id="logout">
+              Log out
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main container">
+
+      <div class="row">
+
+        <div class="col-md-5">
+          <div class="form">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="chequeno">Cheque No</span>
+              </div>
+              <input type="number" id="chequeInput" class="form-control" placeholder="Enter Cheque Number" aria-label="Username" aria-describedby="chequeno">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="amount">Amount</span>
+              </div>
+              <span class="form-control" id="amtSpan" aria-describedby="amount"></span>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="sap">SAP Document No.</span>
+              </div>
+              <input type="number" id="sapInput" class="form-control" placeholder="Enter SAP Document Number" aria-describedby="sap">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="ben">Beneficiary</span>
+              </div>
+              <span class="form-control" id="benSpan" aria-describedby="ben"></span>
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="date">Date</span>
+              </div>
+              <input  id="dateInput" type="date" class="form-control" placeholder="Enter Cheque Date" aria-describedby="date">
+            </div>
+
+            <button class="btn btn-primary btn-lg" id="print">Print</button>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </body>
+
+  <!-- ========================== CUSTOM JS IMPORTS ============================= -->
+  <script src="../js/sampleCheque.js" charset="utf-8"></script>
+  <script src="../js/chequePrint.js" charset="utf-8"></script>
+
+</html>
